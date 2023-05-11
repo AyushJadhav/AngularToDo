@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="todo">
+    <h1>Welcome to {{title}}</h1>
+    <div class="input-group">
+      <input type="text" placeholder="todo" #newTodo>
+      <button class="addTodo" (click)="add(newTodo.value)">Add</button>
+    </div>
+    <table class="table-info">
+      <tr *ngFor="let task of tasks">
+        <td class="taskField">{{task}}</td>
+        <td><button class="removeTask" (click)="remove(task)">X</button></td>
+        <td><button class="done" (click)="completed(task)">Done</button></td>
+      </tr>
+    </table>
+
+    <button class="showCompletedTask" (click)="showCompletedTask()">Show Completed Task</button>
+    <table>
+      <tr>
+        <thead>Completed Tasks</thead>
+      </tr>
+      <tr *ngFor="let task of completedTask">
+        <td>{{task}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
